@@ -28,11 +28,17 @@ cargo add bw-web-api-rs
 This library uses async/await and requires an async runtime such as [tokio](https://github.com/tokio-rs/tokio).
 
 ```rust
-use bw_web_api_rs::{ApiClient, Gateway};
+use bw_web_api_rs::{
+    ApiClient, ApiConfig, Gateway, Leaderboard
+};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let client = ApiClient::new();
+    let config = ApiConfig {
+        base_url: "http://127.0.0.1:37843".to_string(),
+        api_key: None
+    };
+    let client = ApiClient::new(config);
     
     // Get player match info
     let match_info = client.get_matchmaker_player_info(
