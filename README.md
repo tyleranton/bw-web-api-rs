@@ -14,7 +14,7 @@ A Rust client library for interacting with the StarCraft: Remastered API.
 
 ```toml
 [dependencies]
-bw-web-api-rs = "0.2.0"
+bw-web-api-rs = "0.2"
 ```
 
 Or via cargo:
