@@ -29,7 +29,7 @@ This library uses async/await and requires an async runtime such as [tokio](http
 
 ```rust
 use bw_web_api_rs::{
-    ApiClient, ApiConfig, Gateway, Leaderboard
+    ApiClient, ApiConfig, types::{Gateway, Leaderboard}
 };
 
 #[tokio::main]
