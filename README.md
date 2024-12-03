@@ -38,7 +38,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         base_url: "http://127.0.0.1:37843".to_string(),
         api_key: None
     };
-    let client = ApiClient::new(config);
+    let client = ApiClient::new(config)?;
     
     // Get player match info
     let match_info = client.get_matchmaker_player_info(
