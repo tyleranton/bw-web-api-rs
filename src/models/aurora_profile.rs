@@ -27,7 +27,7 @@ pub struct ScrMmToonInfo {
     pub toons: Vec<Toon>,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct ScrProfile {
     pub aurora_id: u32,
     pub avatars: HashMap<String, String>,
@@ -37,7 +37,8 @@ pub struct ScrProfile {
     #[serde(default)]
     pub avatars_locked_framed: HashMap<String, Avatar>,
     pub avatars_unlocked: HashMap<String, Avatar>,
-    pub avatars_stats: AvatarsStats,
+    #[serde(default)]
+    pub avatars_stats: Option<AvatarsStats>,
     #[serde(default)]
     pub battle_tag: String,
     #[serde(default)]

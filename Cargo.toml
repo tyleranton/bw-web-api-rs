@@ -1,6 +1,6 @@
 [package]
 name = "bw-web-api-rs"
-version = "0.2.3"
+version = "0.2.4"
 edition = "2021"
 description = "A Rust client for the StarCraft: Remastered API"
 license = "MIT"

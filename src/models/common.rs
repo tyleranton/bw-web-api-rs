@@ -1,20 +1,20 @@
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Avatar {
     pub level: u32,
     pub stat: String,
     pub url: String,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct AvatarsStats {
     pub mm_protoss_wins: WinStats,
     pub mm_terran_wins: WinStats,
     pub mm_zerg_wins: WinStats,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct GameResult {
     pub attributes: GameResultAttributes,
     pub benefactor_id: String,
@@ -25,7 +25,7 @@ pub struct GameResult {
     pub players: Vec<Player>,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct GameResultAttributes {
     pub client_version: String,
     #[serde(rename = "mapName")]
@@ -33,7 +33,7 @@ pub struct GameResultAttributes {
     pub tileset: String,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct MatchmakedStats {
     pub benefactor_id: String,
     pub bucket: u32,
@@ -52,7 +52,7 @@ pub struct MatchmakedStats {
     pub wins: u32,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Player {
     pub attributes: PlayerAttributes,
     pub result: String,
@@ -60,7 +60,7 @@ pub struct Player {
     pub toon: String,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct PlayerAttributes {
     #[serde(rename = "gPlayerData_idx")]
     pub g_player_data_idx: String,
@@ -70,7 +70,7 @@ pub struct PlayerAttributes {
     pub r#type: String,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct PlayerStats {
     pub zerg_apm: Option<String>,
     pub zerg_games_played: Option<String>,
@@ -131,7 +131,7 @@ pub struct PlayerStats {
     pub protoss_wins: Option<String>,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Profile {
     pub avatar_id: String,
     pub description: String,
@@ -142,7 +142,7 @@ pub struct Profile {
     pub toon_guid: u32,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct RawStats {
     pub legacy_disconnects: u32,
     pub legacy_losses: u32,
@@ -312,14 +312,14 @@ pub struct RawStats {
     pub zerg_wins_sum: u32,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Replay {
     pub attributes: ReplayAttributes,
     pub create_time: u32,
     pub link: String,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct ReplayAttributes {
     pub game_creator: String,
     pub game_id: String,
@@ -344,7 +344,7 @@ pub struct ReplayAttributes {
     pub replay_result: String,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Stat {
     pub benefactor_id: String,
     pub gateway_id: u32,
@@ -353,7 +353,7 @@ pub struct Stat {
     pub toon: String,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Toon {
     pub games_last_week: u32,
     pub gateway_id: u32,
@@ -361,7 +361,7 @@ pub struct Toon {
     pub toon: String,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct WinStats {
     pub bonus: f64,
     pub normal: f64,
