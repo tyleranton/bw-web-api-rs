@@ -1,7 +1,7 @@
 use std::str::FromStr;
 use serde::{Deserialize, Deserializer, Serialize};
 
-#[repr(i32)]
+#[repr(u32)]
 #[derive(Debug, Serialize, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum Gateway {
     USWest = 10,
