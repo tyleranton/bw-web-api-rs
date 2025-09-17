@@ -71,7 +71,7 @@ pub struct ScrToonInfo {
     pub matchmaked_current_season: u32,
     pub matchmaked_current_season_buckets: Vec<u32>,
     pub matchmaked_stats: Vec<MatchmakedStats>,
-    pub profiles: Vec<Profile>,
+    pub profiles: Option<Vec<Profile>>,
     pub program_id: String,
     pub stats: Vec<Stat>,
     pub toon_guid_by_gateway: HashMap<String, HashMap<String, u32>>,
