@@ -24,7 +24,7 @@ impl Endpoint for LeaderboardEntityEndpoint {
 
 impl crate::client::ApiClient {
     /// Get leaderboard entries
-    /// 
+    ///
     /// Endpoint: /web-api/v1/leaderboard/{leaderboard_id}
     pub async fn get_leaderboard_entity(
         &self,

@@ -1,6 +1,6 @@
+use super::common::*;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
-use super::common::*;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ScrMmGameLoading {
@@ -14,7 +14,7 @@ pub struct ScrMmGameLoading {
     pub toon_guid_by_gateway: HashMap<String, HashMap<String, u32>>,
 }
 
-#[derive(Debug, Serialize,Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct ScrMmToonInfo {
     pub aurora_id: u32,
     pub battle_tag: String,

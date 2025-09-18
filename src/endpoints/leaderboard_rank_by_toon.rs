@@ -35,7 +35,7 @@ impl Endpoint for LeaderboardRankEndpoint {
 
 impl crate::client::ApiClient {
     /// Get leaderboard rank for a specific player
-    /// 
+    ///
     /// Endpoint: /web-api/v1/leaderboard-rank-by-toon/{leaderboard_id}/{toon}/{gateway}
     pub async fn get_leaderboard_rank(
         &self,

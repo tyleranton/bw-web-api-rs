@@ -21,7 +21,7 @@ impl Endpoint for Leaderboard {
 
 impl crate::client::ApiClient {
     /// Get leaderboard metadata including available gamemodes, gateways, and leaderboards
-    /// 
+    ///
     /// Endpoint: /web-api/v1/leaderboard
     pub async fn get_leaderboard(&self) -> Result<LeaderboardMetadata, ApiError> {
         let endpoint = Leaderboard::new();

@@ -1,5 +1,5 @@
-use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct RaceStats {
@@ -28,10 +28,12 @@ pub struct MapStatsByToon {
 }
 
 impl MapStatsByToon {
-    pub fn get_map_stats(&self, gamemode: &str, season: &str, map_hash: &str) -> Option<&MapRaceStats> {
-        self.map_stat
-            .get(gamemode)?
-            .get(season)?
-            .get(map_hash)
+    pub fn get_map_stats(
+        &self,
+        gamemode: &str,
+        season: &str,
+        map_hash: &str,
+    ) -> Option<&MapRaceStats> {
+        self.map_stat.get(gamemode)?.get(season)?.get(map_hash)
     }
 }

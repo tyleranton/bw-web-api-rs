@@ -29,7 +29,7 @@ impl Endpoint for MapStatsByToonEndpoint {
 
 impl crate::client::ApiClient {
     /// Get map statistics for a specific player
-    /// 
+    ///
     /// Endpoint: /web-api/v1/map-stats-by-toon/{toon}/{gateway}
     pub async fn get_map_stats(
         &self,

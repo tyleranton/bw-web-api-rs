@@ -26,7 +26,7 @@ impl Endpoint for MatchmakerPlayerInfoEndpoint {
 
 impl crate::client::ApiClient {
     /// Get detailed player information for a specific match
-    /// 
+    ///
     /// Endpoint: /web-api/v1/matchmaker-gameinfo-playerinfo/{match_id}
     pub async fn get_matchmaker_player_info(
         &self,

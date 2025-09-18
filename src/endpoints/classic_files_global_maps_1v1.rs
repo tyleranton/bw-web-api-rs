@@ -21,7 +21,7 @@ impl Endpoint for GlobalMaps1v1Endpoint {
 
 impl crate::client::ApiClient {
     /// Get global 1v1 maps file set
-    /// 
+    ///
     /// Endpoint: /web-api/v1/file-set/classic.files.global.maps-1v1
     pub async fn get_global_maps_1v1(&self) -> Result<GlobalMaps1v1, ApiError> {
         let endpoint = GlobalMaps1v1Endpoint::new();

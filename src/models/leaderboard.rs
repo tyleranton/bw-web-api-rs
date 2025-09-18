@@ -1,6 +1,6 @@
-use std::collections::HashMap;
-use serde::{Deserialize, Serialize};
 use crate::types::Gateway;
+use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct LeaderboardEntry {
@@ -100,3 +100,16 @@ impl LeaderboardResponse {
             .collect()
     }
 }
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct LeaderboardNameSearchEntry {
+    pub avatar: String,
+    pub battletag: String,
+    pub gateway_id: Gateway,
+    pub last_rank: u32,
+    pub name: String,
+    pub points: u32,
+    pub rank: u32,
+}
+
+pub type LeaderboardNameSearchResponse = Vec<LeaderboardNameSearchEntry>;

@@ -16,10 +16,7 @@ pub enum ApiError {
 
     /// API returned an error response
     #[error("API error (status {status}): {message}")]
-    ApiError {
-        status: u16,
-        message: String,
-    },
+    ApiError { status: u16, message: String },
 
     /// Invalid input parameters
     #[error("Invalid input: {0}")]

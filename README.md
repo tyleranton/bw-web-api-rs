@@ -29,7 +29,8 @@ This library uses async/await and requires an async runtime such as [tokio](http
 
 ```rust
 use bw_web_api_rs::{
-    ApiClient, ApiConfig, types::{Gateway, Leaderboard}
+    ApiClient, ApiConfig,
+    types::{Gateway, Leaderboard},
 };
 
 #[tokio::main]
@@ -41,22 +42,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = ApiClient::new(config)?;
     
     // Get player match info
-    let match_info = client.get_matchmaker_player_info(
-        "MM-EBECDFA6-B0F4-11EF-8534-FA167A7650A3".to_string()
-    ).await?;
-    
-    // Get player profile
-    let profile = client.get_aurora_profile(
-        "By.SnOw1".to_string(),
-        Gateway::Korea,
-        AuroraProfileFieldMask::ScrProfile
-    ).await?;
-    
-    // Get leaderboard
-    let leaderboard = client.get_leaderboard(
-        Leaderboard::Global,
-        Gateway::USWest
-    ).await?;
+    let match_info = client
+        .get_matchmaker_player_info("MM-EBECDFA6-B0F4-11EF-8534-FA167A7650A3".to_string())
+        .await?;
+
+    // Get player profile (scr_profile field mask)
+    let profile = client
+        .get_aurora_profile_by_toon_scr_profile("By.SnOw1".to_string(), Gateway::Korea)
+        .await?;
+
+    // Fetch leaderboard metadata such as available seasons
+    let leaderboard_metadata = client.get_leaderboard().await?;
 
     Ok(())
 }
@@ -64,12 +60,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Available Endpoints
 
-- `get_aurora_profile(toon, gateway, field_mask)` - Get player profile information with specified field mask
-- `get_classic_files_global_maps_1v1()` - Get available 1v1 maps
+- `get_aurora_profile_by_toon_scr_profile(toon, gateway)` (and other field-mask variants) - Get player profile information
+- `get_global_maps_1v1()` - Get available 1v1 maps
 - `get_gateway_status()` - Get status of all gateways
 - `get_leaderboard()` - Get leaderboard metadata including available gamemodes, gateways, and leaderboards
-- `get_leaderboard_entity(leaderboard_id, gateway)` - Get leaderboard entries for a specific leaderboard and gateway
+- `get_leaderboard_entity(leaderboard_id)` - Get leaderboard entries for a specific leaderboard
 - `get_leaderboard_rank(leaderboard_id, toon, gateway)` - Get specific player's ranking
+- `search_leaderboard_by_battletag(leaderboard_id, battletag)` - Search a leaderboard for players matching a Battletag
 - `get_map_stats(toon, gateway)` - Get player's map statistics
 - `get_matchmaker_gameinfo(toon, gateway, gamemode, season, offset, limit)` - Get player's match history
 - `get_matchmaker_player_info(match_id)` - Get detailed match information

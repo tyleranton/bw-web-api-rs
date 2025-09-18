@@ -1,5 +1,5 @@
-use std::str::FromStr;
 use serde::{Deserialize, Deserializer, Serialize};
+use std::str::FromStr;
 
 #[repr(u32)]
 #[derive(Debug, Serialize, Clone, Copy, PartialEq, Eq, Hash)]
@@ -24,7 +24,7 @@ impl<'de> Deserialize<'de> for Gateway {
         }
 
         let gateway_id = GatewayId::deserialize(deserializer)?;
-        
+
         let id = match gateway_id {
             GatewayId::Num(n) => n,
             GatewayId::Str(s) => i32::from_str(&s).map_err(serde::de::Error::custom)?,
@@ -37,7 +37,7 @@ impl<'de> Deserialize<'de> for Gateway {
             30 => Ok(Gateway::Korea),
             45 => Ok(Gateway::Asia),
             other => Err(serde::de::Error::custom(format!(
-                "Unknown gateway id: {}", 
+                "Unknown gateway id: {}",
                 other
             ))),
         }
@@ -47,10 +47,10 @@ impl<'de> Deserialize<'de> for Gateway {
 #[repr(i32)]
 #[derive(Debug, Clone, Copy)]
 pub enum Leaderboard {
-    Global = 12960,
-    USWest = 12961,
-    USEast = 12962,
-    Europe = 12963,
-    Korea = 12964,
-    Asia = 12965,
+    Global = 12972,
+    USWest = 12973,
+    USEast = 12974,
+    Europe = 12975,
+    Korea = 12976,
+    Asia = 12977,
 }

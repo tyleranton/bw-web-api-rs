@@ -21,7 +21,7 @@ impl Endpoint for GatewayEndpoint {
 
 impl crate::client::ApiClient {
     /// Get status of all gateways
-    /// 
+    ///
     /// Endpoint: /web-api/v1/gateway
     pub async fn get_gateway_status(&self) -> Result<GatewayResponse, ApiError> {
         let endpoint = GatewayEndpoint::new();
