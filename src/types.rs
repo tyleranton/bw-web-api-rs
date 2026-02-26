@@ -47,10 +47,10 @@ impl<'de> Deserialize<'de> for Gateway {
 #[repr(i32)]
 #[derive(Debug, Clone, Copy)]
 pub enum Leaderboard {
-    Global = 12972,
-    USWest = 12973,
-    USEast = 12974,
-    Europe = 12975,
-    Korea = 12976,
-    Asia = 12977,
+    Global = 12978,
+    USWest = 12979,
+    USEast = 12980,
+    Europe = 12981,
+    Korea = 12982,
+    Asia = 12983,
 }
