@@ -93,6 +93,11 @@ The library provides a comprehensive error type `ApiError` that covers:
 - Deserialization errors
 - Invalid parameters
 
+## Alternatives
+
+- [bw-web-api](https://github.com/dxrsz/bw-web-api) (TypeScript)
+- [bw-web-api-go](https://github.com/devblac/bw-web-api-go) (Go)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
